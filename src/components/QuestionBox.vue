@@ -31,11 +31,11 @@
         @click="submitAnswer"
         :disabled="selectedIndex === null || answered"
         >
-        Submit
+        Vastaa
 
       </b-button>
       <b-button @click="next" :disabled="!answered" variant="success">
-        Next
+        Seuraava
       </b-button>
     </b-jumbotron>
   </div>
@@ -61,7 +61,7 @@ export default {
     answers() {
       let answers = [...this.currentQuestion.incorrect_answers]
       answers.push(this.currentQuestion.correct_answer)
-      return answers
+      return this.shuffledAnswers
     }
   },
   watch: {
