@@ -2,8 +2,8 @@
     <div>
         <h1>Hyvää 50v syntymäpäivää!!!</h1>
 
-       <div>
-        <iframe width="1280" height="600" src="https://www.youtube.com/embed/0gHKtxL9KS4?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" 
+       <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" width="1280" height="720" src="https://www.youtube.com/embed/0gHKtxL9KS4?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" 
         frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen

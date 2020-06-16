@@ -22,15 +22,14 @@
             :next ="next"
             :increment="increment"
             :index="index"
-           />
-
-           <VideoContainer
-           v-if="index >= questions.length && hasBegun"
-           />
-          
+           />      
         </b-col>
       </b-row>
     </b-container>
+
+    <VideoContainer
+      v-if="index >= questions.length && hasBegun"
+    />
 
   </div>
 </template>
