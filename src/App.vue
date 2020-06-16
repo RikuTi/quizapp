@@ -1,6 +1,13 @@
 <template>
   <div id="app">
+
+    <WelcomePage
+     v-if="!hasBegun"
+     :setStarted="setStarted"
+    />
+
     <Header 
+    v-if="hasBegun"
     :numCorrect="numCorrect"
     :numTotal="numTotal"
     />
@@ -10,7 +17,7 @@
         <b-col sm="6" offset="3">
 
           <QuestionBox
-            v-if="questions.length && index < questions.length"
+            v-if="questions.length && index < questions.length && hasBegun"
             :currentQuestion="questions[index]"
             :next ="next"
             :increment="increment"
@@ -18,7 +25,7 @@
            />
 
            <VideoContainer
-           v-if="index >= questions.length"
+           v-if="index >= questions.length && hasBegun"
            />
           
         </b-col>
@@ -32,12 +39,15 @@
 import Header from './components/Header.vue'
 import QuestionBox from './components/QuestionBox.vue'
 import VideoContainer from './components/VideoContainer.vue'
+import WelcomePage from './components/WelcomePage.vue'
+
 export default {
   name: 'App',
   components: {
     Header,
     QuestionBox,
-    VideoContainer
+    VideoContainer,
+    WelcomePage
   },
 
   data() {
@@ -46,7 +56,8 @@ export default {
           myQuestions: [],
           index: 0,
           numCorrect: 0,
-          numTotal: 0
+          numTotal: 0,
+          hasBegun: false
       }
   },
   methods: {
@@ -58,6 +69,9 @@ export default {
               this.numCorrect++
           }
           //this.numTotal++
+      },
+      setStarted(){
+        this.hasBegun = true
       }
   },
   mounted: function() {
@@ -81,7 +95,17 @@ export default {
       question:"Mikä oli Saaren kunnan asukasluku vuonna 1970?", 
       image_source: "" }
 
-      var question_3 = {correct_answer:"50", 
+      var question_3 = {correct_answer:"1988", 
+      incorrect_answers: ["1972","1976","1992"],
+      question:"Minä vuonna Suomen jääkiekon maajoukkue voitti ensimmäinen Olympialaisten arvomitalin?", 
+      image_source: "" }
+
+      var question_4 = {correct_answer:"Ford Escort Mk2 Cosworth", 
+      incorrect_answers: ["BMW M3 E30","Mercedes-Benz W201","Ford Sierra"],
+      question:"Mikä auto kuvassa näkyy?", 
+      image_source: "https://www.classicdriver.com/sites/default/files/styles/two_third_slider/public/cars_images/dsc04614_large_0.jpg" }
+
+      var question_5 = {correct_answer:"50", 
       incorrect_answers: ["230","7","25"],
       question:"Mikä on x:n arvo kun x on:", 
       image_source: "https://puu.sh/FWZdr/c15ab77f20.png" }
@@ -89,6 +113,8 @@ export default {
       this.questions.push(question_1)
       this.questions.push(question_2)
       this.questions.push(question_3)
+      this.questions.push(question_4)
+      this.questions.push(question_5)
 
       this.numTotal = this.questions.length
       

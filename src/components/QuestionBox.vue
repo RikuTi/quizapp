@@ -6,7 +6,7 @@
         {{  decoder(currentQuestion.question) }}
 
         <div v-if="currentQuestion.image_source != ''">
-          <img :src="currentQuestion.image_source" alt="">
+          <img :src="currentQuestion.image_source" alt="" class="img-fluid">
         </div>
       </template>
 
