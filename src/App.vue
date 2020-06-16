@@ -85,7 +85,7 @@ export default {
       })*/
       var question_1 = {correct_answer:"Simon & Garfunkel - Bridge over Troubled Water", 
       incorrect_answers: ["Led Zeppelin - Led Zeppelin II","Alice Cooper - Pretties for You","The Rolling Stones - Sticky Fingers"],
-      question:"Mikä albumi oli suomen albumilistan ykkönen vuonna 1970 kesäkuu/heinäkuu aikana?", 
+      question:"Mikä albumi oli Suomen albumilistan ykkönen vuonna 1970 kesäkuu/heinäkuu aikana?", 
       image_source: "" }
 
 
@@ -96,7 +96,7 @@ export default {
 
       var question_3 = {correct_answer:"1988", 
       incorrect_answers: ["1972","1976","1992"],
-      question:"Minä vuonna Suomen jääkiekon maajoukkue voitti ensimmäinen Olympialaisten arvomitalin?", 
+      question:"Minä vuonna Suomen jääkiekon maajoukkue voitti ensimmäisen Olympialaisten arvomitalin?", 
       image_source: "" }
 
       var question_4 = {correct_answer:"Ford Escort Mk2 Cosworth", 
